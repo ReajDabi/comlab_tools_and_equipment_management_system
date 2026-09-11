@@ -20,6 +20,14 @@ A robust desktop application built with C# WinForms to manage laboratory hardwar
 * .NET SDK (Version X.X)
 * MySQL
 
+### BranchTree
+master (Production - only working, tested code here)
+ └── develop (Integration - where we combine features)
+      ├── feature/user-authentication (Dev A's branch)
+      ├── feature/equipment-crud      (Dev B's branch)
+      └── feature/qr-scanner-setup    (Dev A's branch)
+
+
 ### Installation
 1. Clone the repository: `git clone https://github.com/ReajDabi/comlab_tools_and_equipment_management_system.git`
 2. Update the connection string in `appsettings.json` (or `App.config`).
