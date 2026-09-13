@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="ProjectDocumentation.md" />
+  </Folder>
   <Project Path="ComLabManager.Core/ComLabManager.Core.csproj" Id="92434533-921b-4748-b642-2224f0588749" />
   <Project Path="ComLabManager.Infrastructure/ComLabManager.Infrastructure.csproj" Id="8993b224-0407-4094-82dc-82c56a12b8da" />
   <Project Path="comlab_tools_and_equipment_management_system/comlab_tools_and_equipment_management_system.csproj" />
