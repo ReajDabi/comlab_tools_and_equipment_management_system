@@ -32,6 +32,7 @@ Version Control: Git
 ## 3. Project Structure
 
 LabManager/ 
+
 ├── ComlabManager.Core/           # Layer 1: Core entity models and repository interfaces
 
 ├── ComlabManager.Infrastructure/ # Layer 2: Dapper SQL queries and DbConnectionFactory
@@ -60,9 +61,12 @@ Setup Steps
 Clone the repository:
 
 Bash
+
 git clone https://github.com/ReajDabi/comlab_tools_and_equipment_management_system.git
-cd LabManager
-Database Setup:
+
+cd comlab_tools_and_equipment_management_system
+
+ Database Setup:
 
 Execute the latest SQL schema file located in Database/ using MySQL Workbench or your preferred DB manager.
 
