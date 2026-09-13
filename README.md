@@ -1,7 +1,7 @@
 ## Computer Laboratory Equipment and Maintenance Management System
 A dedicated desktop application built with C# WinForms to manage computer laboratory assets, track hardware lifecycles, and handle maintenance ticketing. Tailored for academic IT environments like UM - Visayan Campus, the system provides a complete solution for fleet tracking, issue logging, and role-based inventory management.
 
-##1. Project Overview
+## 1. Project Overview
 LabManager is designed for efficiency and ease of use in computer laboratory administration. Key capabilities include:
 
 Role-Based Access Control: Secure environments customized for Admins (full CRUD capabilities), Lab Technicians (maintenance and inventory updates), and Students (read-only lab availability).
@@ -16,7 +16,7 @@ Analytics Dashboard: High-level metrics for lab custodians to monitor total acti
 
 The project utilizes a strict N-Tier architecture (Core, Infrastructure, UI), separating business logic and database execution from presentation to ensure maximum scalability.
 
-##2. Technologies Used
+## 2. Technologies Used
 Desktop: C# .NET (WinForms)
 
 Database: MySQL
@@ -29,16 +29,24 @@ Architecture: N-Tier Layered Architecture (Dependency Injection)
 
 Version Control: Git
 
-3. Project Structure
-Plaintext
+## 3. Project Structure
+
 LabManager/ 
 ├── ComlabManager.Core/           # Layer 1: Core entity models and repository interfaces
+
 ├── ComlabManager.Infrastructure/ # Layer 2: Dapper SQL queries and DbConnectionFactory
+
 ├── ComlabManager.UI/             # Layer 3: WinForms UI components, DI Bootstrapper
+
 ├── Database/                     # SQL scripts for schema generation
+
 ├── LabManager.sln                # Visual Studio solution
+
 └── ProjectDocumentation.md       # Comprehensive system documentation 
-##4. Getting Started
+
+
+
+## 4. Getting Started
 Prerequisites
 
 Visual Studio 2022 (Community or Enterprise)
@@ -71,7 +79,7 @@ Build the solution to restore all NuGet packages (Dapper, MySql.Data, BCrypt).
 Run the project.
 
 
-##5. Development Team
-##Reajzedrik F. Dabi: Lead Developer
+## 5. Development Team
 
-##Chrishian E. Degaom: Lead Developer
+## Reajzedrik F. Dabi: Lead Developer
+## Chrishian E. Degaom: Lead Developer
