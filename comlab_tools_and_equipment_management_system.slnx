@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Database/">
+    <File Path="01_LabManager_Init_And_Seed.sql" />
+  </Folder>
   <Folder Name="/Solution Items/">
     <File Path="ProjectDocumentation.md" />
   </Folder>
