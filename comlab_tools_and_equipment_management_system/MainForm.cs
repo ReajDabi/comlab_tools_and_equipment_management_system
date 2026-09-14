@@ -1,8 +1,8 @@
 namespace comlab_tools_and_equipment_management_system
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }

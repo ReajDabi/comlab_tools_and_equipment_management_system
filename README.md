@@ -1,4 +1,4 @@
-## Computer Laboratory Equipment and Maintenance Management System
+## LabManager: Computer Laboratory Equipment and Maintenance Management System
 A dedicated desktop application built with C# WinForms to manage computer laboratory assets, track hardware lifecycles, and handle maintenance ticketing. Tailored for academic IT environments like UM - Visayan Campus, the system provides a complete solution for fleet tracking, issue logging, and role-based inventory management.
 
 ## 1. Project Overview
@@ -10,9 +10,13 @@ Asset Lifecycle Management: Comprehensive tracking of physical hardware, categor
 
 Omni-Search Engine: Instantaneous, wildcard database searching across multiple attributes (Asset Tag, Station Number, Model) to identify hardware without physical barcode scanners.
 
-Maintenance Ticketing: Streamlined workflows for reporting broken equipment, tracking repair statuses (Pending, In Progress, Resolved), and automatically updating hardware availability.
+Reactive Maintenance Ticketing: Streamlined workflows for reporting broken equipment, tracking repair statuses (Pending, In Progress, Resolved), and automatically updating hardware availability.
 
-Analytics Dashboard: High-level metrics for lab custodians to monitor total active workstations and units currently under repair.
+Preventive Maintenance Scheduler: Automated tracking of recurring hardware upkeep (e.g., thermal paste re-application, dust cleaning) with dashboard alerts for overdue tasks based on designated frequencies.
+
+Spare Parts & Cost Tracking: Automated deduction of spare parts from inventory when used in repairs, coupled with financial cost tracking to monitor total IT maintenance expenditures.
+
+Analytics Dashboard: High-level metrics for lab custodians to monitor total active workstations, units currently under repair, and upcoming preventive maintenance duties.
 
 The project utilizes a strict N-Tier architecture (Core, Infrastructure, UI), separating business logic and database execution from presentation to ensure maximum scalability.
 
@@ -31,7 +35,7 @@ Version Control: Git
 
 ## 3. Project Structure
 
-LabManager/ 
+comlab_tools_and_equipment_management_system/ 
 
 ├── ComlabManager.Core/           # Layer 1: Core entity models and repository interfaces
 
@@ -39,13 +43,11 @@ LabManager/
 
 ├── ComlabManager.UI/             # Layer 3: WinForms UI components, DI Bootstrapper
 
-├── Database/                     # SQL scripts for schema generation
+├── Database/                     # SQL scripts for schema generation and initial data seeding
 
 ├── LabManager.sln                # Visual Studio solution
 
-└── ProjectDocumentation.md       # Comprehensive system documentation 
-
-
+└── ProjectDocumentation.md       # Comprehensive system documentation
 
 ## 4. Getting Started
 Prerequisites
@@ -58,17 +60,17 @@ MySQL Server 8.0+
 
 Setup Steps
 
-Clone the repository:
-
-Bash
-
 git clone https://github.com/ReajDabi/comlab_tools_and_equipment_management_system.git
 
 cd comlab_tools_and_equipment_management_system
 
- Database Setup:
+Database Setup & Seeding:
 
-Execute the latest SQL schema file located in Database/ using MySQL Workbench or your preferred DB manager.
+Open MySQL Workbench and connect to your local instance as root.
+
+Navigate to the Database/ folder in the repository and open the initialization/seed script (e.g., 01_LabManager_Init_And_Seed.sql).
+
+Execute the script to generate the database schema and populate the system with initial test data.
 
 Configure the MySQL connection string inside ComlabManager.UI/Program.cs (or appsettings.json if configured).
 
@@ -82,8 +84,9 @@ Build the solution to restore all NuGet packages (Dapper, MySql.Data, BCrypt).
 
 Run the project.
 
-
 ## 5. Development Team
 
-## Reajzedrik F. Dabi: Lead Developer
-## Chrishian E. Degaom: Lead Developer
+
+Reajzedrik F. Dabi: Lead Developer
+
+Chrishian E. Degaom: Lead Developer
