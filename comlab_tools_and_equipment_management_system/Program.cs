@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Windows.Forms;
 
-namespace ComlabManager.UI
+namespace ComLabManager.UI
 {
     internal static class Program
     {
@@ -28,10 +28,23 @@ namespace ComlabManager.UI
 
             // Register your main form
             services.AddTransient<MainForm>();
+            services.AddTransient<LoginForm>();
+
 
             // 4. Build the factory and run the app
             var serviceProvider = services.BuildServiceProvider();
-            Application.Run(serviceProvider.GetRequiredService<MainForm>());
+            var loginForm = serviceProvider.GetRequiredService<LoginForm>();
+
+            if (loginForm.ShowDialog() == DialogResult.OK)
+            {
+                // If login was successful, run the main application
+                Application.Run(serviceProvider.GetRequiredService<MainForm>());
+            }
+            else
+            {
+                // If they click the "X" on the login screen, exit completely
+                Application.Exit();
+            }
         }
     }
 }

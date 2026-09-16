@@ -10,6 +10,10 @@ namespace ComlabManager.Infrastructure.Repositories
     {
         private readonly string _connectionString;
 
+        public UserRepository(string connectionString)
+        {
+            _connectionString = connectionString;
+        }
         public User AuthenticateUser(string username, string rawPassword)
         {
             try
