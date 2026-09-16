@@ -1,4 +1,5 @@
 using comlab_tools_and_equipment_management_system;
+using ComlabManager.Core.Interfaces;
 using ComlabManager.Infrastructure.Repositories;
 using ComLabManager.Core.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,6 +24,7 @@ namespace ComlabManager.UI
 
             // 3. Register your tools (Whenever the UI asks for IEquipmentRepository, give it this one)
             services.AddTransient<IEquipmentRepository>(provider => new EquipmentRepository(connectionString));
+            services.AddTransient<IUserRepository>(provider => new UserRepository(connectionString));
 
             // Register your main form
             services.AddTransient<MainForm>();

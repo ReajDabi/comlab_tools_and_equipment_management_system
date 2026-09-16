@@ -10,26 +10,27 @@ namespace ComlabManager.Infrastructure.Repositories
     {
         private readonly string _connectionString;
 
-        public UserRepository(string connectionString)
-        {
-            _connectionString = connectionString;
-        }
-
         public User AuthenticateUser(string username, string rawPassword)
         {
-            using (var connection = new MySqlConnection(_connectionString))
+            try
             {
-                string sql = "SELECT * FROM Users WHERE Username = @Username LIMIT 1";
-
-                
-                var user = connection.QuerySingleOrDefault<User>(sql, new { Username = username });
-
-                if (user != null && BCrypt.Net.BCrypt.Verify(rawPassword, user.PasswordHash))
+                using (var connection = new MySqlConnection(_connectionString))
                 {
-                    return user; 
-                }
+                    string sql = "SELECT * FROM Users WHERE Username = @Username LIMIT 1";
+                    var user = connection.QuerySingleOrDefault<User>(sql, new { Username = username });
 
-                return null; 
+                    if (user != null && BCrypt.Net.BCrypt.Verify(rawPassword, user.PasswordHash))
+                    {
+                        return user;
+                    }
+
+                    return null; 
+                }
+            }
+            catch (MySqlException ex)
+            {
+               
+                throw new Exception("Unable to connect to the database. Please check if the server is running.", ex);
             }
         }
     }
