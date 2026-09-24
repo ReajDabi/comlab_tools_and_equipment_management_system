@@ -1,4 +1,4 @@
-using comlab_tools_and_equipment_management_system;
+using ComLabManager.UI;
 using ComlabManager.Core.Interfaces;
 using ComlabManager.Infrastructure.Repositories;
 using ComLabManager.Core.Interfaces;
@@ -54,18 +54,23 @@ namespace ComLabManager.UI
                 string updateSql = "UPDATE Users SET PasswordHash = @Hash WHERE Username = 'admin_reaj'";
                 connection.Execute(updateSql, new { Hash = realHash });
             }
-          
+
 
             var loginForm = serviceProvider.GetRequiredService<LoginForm>();
+
             if (loginForm.ShowDialog() == DialogResult.OK)
-      
             {
-             
-                Application.Run(serviceProvider.GetRequiredService<MainForm>());
+               
+                var mainForm = serviceProvider.GetRequiredService<MainForm>();
+
+               
+                mainForm.SetCurrentUser(loginForm.AuthenticatedUser);
+
+                
+                Application.Run(mainForm);
             }
             else
             {
-               
                 Application.Exit();
             }
         }

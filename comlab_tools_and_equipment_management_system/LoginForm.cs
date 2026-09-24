@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using ComlabManager.Core.Interfaces;
+using ComLabManager.Core.Models;
 
 
 namespace ComLabManager.UI
@@ -13,6 +14,8 @@ namespace ComLabManager.UI
     public partial class LoginForm : Form
     {
         private readonly IUserRepository _userRepository;
+
+        public User AuthenticatedUser { get; private set; }
         public LoginForm(IUserRepository userRepository)
 
         {
@@ -41,6 +44,7 @@ namespace ComLabManager.UI
                     return;
 
                 }
+                AuthenticatedUser = user;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }

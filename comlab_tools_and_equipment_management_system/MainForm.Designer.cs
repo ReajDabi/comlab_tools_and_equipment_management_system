@@ -1,5 +1,4 @@
-﻿namespace comlab_tools_and_equipment_management_system
-{
+﻿namespace ComLabManager.UI;
     partial class MainForm
     {
         /// <summary>
@@ -42,4 +41,4 @@
 
         #endregion
     }
-}
+
