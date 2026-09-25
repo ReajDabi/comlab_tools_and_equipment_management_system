@@ -61,5 +61,21 @@ namespace ComlabManager.Infrastructure.Repositories
                 connection.Execute(sql, new { Id = id });
             }
         }
+
+
+        public List<Equipment> SearchEquipment(string keyword)
+        {
+            using (var connection = new MySqlConnection(_connectionString))
+            {
+                
+                string sql = @"SELECT * FROM Equipment 
+                       WHERE Name LIKE @Search 
+                       OR SerialNumber LIKE @Search 
+                       OR Category LIKE @Search 
+                       OR Status LIKE @Search";
+
+                return connection.Query<Equipment>(sql, new { Search = $"%{keyword}%" }).ToList();
+            }
+        }
     }
 }
