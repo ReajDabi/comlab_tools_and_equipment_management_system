@@ -1,10 +1,28 @@
-namespace comlab_tools_and_equipment_management_system
+using ComLabManager.Core.Interfaces;
+using ComLabManager.Core.Models;
+
+namespace ComLabManager.UI
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        private readonly IEquipmentRepository _equipmentRepository;
+        private User _currentUser; 
+
+       
+        public MainForm(IEquipmentRepository equipmentRepository)
         {
             InitializeComponent();
+            _equipmentRepository = equipmentRepository;
         }
+
+        
+        public void SetCurrentUser(User user)
+        {
+            _currentUser = user;
+        }
+
+       
     }
+
 }
+    
