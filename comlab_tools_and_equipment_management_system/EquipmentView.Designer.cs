@@ -132,7 +132,7 @@
             btnAddEquipment.FlatAppearance.BorderSize = 0;
             btnAddEquipment.FlatStyle = FlatStyle.Flat;
             btnAddEquipment.ForeColor = Color.White;
-            btnAddEquipment.Location = new Point(1469, 15);
+            btnAddEquipment.Location = new Point(736, 15);
             btnAddEquipment.Name = "btnAddEquipment";
             btnAddEquipment.Size = new Size(197, 34);
             btnAddEquipment.TabIndex = 3;
