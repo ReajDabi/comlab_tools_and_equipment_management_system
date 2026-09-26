@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace ComLabManager.UI
 {
-    public partial class MaintenanceForm : Form
+    public partial class MaintenanceView : UserControl
     {
-        public MaintenanceForm()
+        public MaintenanceView()
         {
             InitializeComponent();
         }

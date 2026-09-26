@@ -44,7 +44,7 @@ namespace ComLabManager.UI
             _activeButton = clickedButton;
         }
 
-
+        
 
 
 
