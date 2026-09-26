@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace ComLabManager.UI
 {
-    public partial class SparePartsViewcs : UserControl
+    public partial class SparePartsView : UserControl
     {
-        public SparePartsViewcs()
+        public SparePartsView()
         {
             InitializeComponent();
         }
