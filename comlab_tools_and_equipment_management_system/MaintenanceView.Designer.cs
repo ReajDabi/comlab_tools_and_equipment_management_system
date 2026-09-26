@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            buttonCreateTicket = new Button();
             dataGridView1 = new DataGridView();
             ticket = new DataGridViewTextBoxColumn();
             equipment = new DataGridViewTextBoxColumn();
@@ -38,19 +38,20 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // button1
+            // buttonCreateTicket
             // 
-            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button1.BackColor = Color.Navy;
-            button1.Cursor = Cursors.NoMove2D;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = SystemColors.ControlLight;
-            button1.Location = new Point(860, 560);
-            button1.Name = "button1";
-            button1.Size = new Size(193, 62);
-            button1.TabIndex = 0;
-            button1.Text = "Create Ticket";
-            button1.UseVisualStyleBackColor = false;
+            buttonCreateTicket.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonCreateTicket.BackColor = Color.Navy;
+            buttonCreateTicket.Cursor = Cursors.NoMove2D;
+            buttonCreateTicket.FlatStyle = FlatStyle.Flat;
+            buttonCreateTicket.ForeColor = SystemColors.ControlLight;
+            buttonCreateTicket.Location = new Point(860, 560);
+            buttonCreateTicket.Name = "buttonCreateTicket";
+            buttonCreateTicket.Size = new Size(193, 62);
+            buttonCreateTicket.TabIndex = 0;
+            buttonCreateTicket.Text = "Create Ticket";
+            buttonCreateTicket.UseVisualStyleBackColor = false;
+            buttonCreateTicket.Click += buttonCreateTicket_Click;
             // 
             // dataGridView1
             // 
@@ -113,7 +114,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(248, 249, 250);
             BorderStyle = BorderStyle.FixedSingle;
-            Controls.Add(button1);
+            Controls.Add(buttonCreateTicket);
             Controls.Add(dataGridView1);
             Cursor = Cursors.Hand;
             Font = new Font("Segoe UI", 10F);
@@ -125,7 +126,7 @@
 
         #endregion
 
-        private Button button1;
+        private Button buttonCreateTicket;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn ticket;
         private DataGridViewTextBoxColumn equipment;
