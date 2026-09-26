@@ -138,6 +138,7 @@
             btnAddEquipment.TabIndex = 3;
             btnAddEquipment.Text = "+ Add Equipment";
             btnAddEquipment.UseVisualStyleBackColor = false;
+            btnAddEquipment.Click += btnAddEquipment_Click;
             // 
             // btnSearch
             // 
