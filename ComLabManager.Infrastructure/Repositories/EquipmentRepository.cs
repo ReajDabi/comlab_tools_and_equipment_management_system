@@ -11,7 +11,7 @@ namespace ComlabManager.Infrastructure.Repositories
     {
         private readonly string _connectionString;
 
-        // The repository demands a connection string when it is created
+       
         public EquipmentRepository(string connectionString)
         {
             _connectionString = connectionString;
@@ -19,11 +19,62 @@ namespace ComlabManager.Infrastructure.Repositories
 
         public List<Equipment> GetAllEquipment()
         {
-            // The 'using' block ensures the connection closes automatically when done
+           
             using (var connection = new MySqlConnection(_connectionString))
             {
                 string sql = "SELECT * FROM Equipment";
                 return connection.Query<Equipment>(sql).ToList();
+            }
+        }
+
+        public void AddEquipment(Equipment equipment)
+        {
+            using (var connection = new MySqlConnection(_connectionString))
+            {
+                
+                string sql = @"INSERT INTO Equipment (Name, SerialNumber, Category, Status, Location, DateAcquired) 
+                       VALUES (@Name, @SerialNumber, @Category, @Status, @Location, @DateAcquired)";
+
+                connection.Execute(sql, equipment);
+            }
+        }
+
+        public void UpdateEquipment(Equipment equipment)
+        {
+            using (var connection = new MySqlConnection(_connectionString))
+            {
+                string sql = @"UPDATE Equipment 
+                       SET Name = @Name, SerialNumber = @SerialNumber, 
+                           Category = @Category, Status = @Status, 
+                           Location = @Location, DateAcquired = @DateAcquired 
+                       WHERE Id = @Id";
+
+                connection.Execute(sql, equipment);
+            }
+        }
+
+        public void DeleteEquipment(int id)
+        {
+            using (var connection = new MySqlConnection(_connectionString))
+            {
+                string sql = "DELETE FROM Equipment WHERE Id = @Id";
+                connection.Execute(sql, new { Id = id });
+            }
+        }
+
+
+        public List<Equipment> SearchEquipment(string keyword)
+        {
+            using (var connection = new MySqlConnection(_connectionString))
+            {
+                
+                string sql = @"SELECT * FROM Equipment 
+                       WHERE Name LIKE @Search 
+                       OR SerialNumber LIKE @Search 
+                       OR Category LIKE @Search 
+                       OR Status LIKE @Search";
+
+                return connection.Query<Equipment>(sql, new { Search = $"%{keyword}%" }).ToList();
             }
         }
     }
