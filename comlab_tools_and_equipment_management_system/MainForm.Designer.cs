@@ -27,6 +27,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
         pnlHeader = new Panel();
         lblPageTitle = new Label();
         lblCurrentUser = new Label();
@@ -43,9 +44,11 @@
         lblMaintenance = new Label();
         pnlSidebar = new Panel();
         pnlMainContent = new Panel();
+        pbLogo = new PictureBox();
         pnlHeader.SuspendLayout();
         pnlLogo.SuspendLayout();
         pnlSidebar.SuspendLayout();
+        ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
         SuspendLayout();
         // 
         // pnlHeader
@@ -192,6 +195,7 @@
         // pnlLogo
         // 
         pnlLogo.BackColor = Color.FromArgb(30, 41, 59);
+        pnlLogo.Controls.Add(pbLogo);
         pnlLogo.Controls.Add(label1);
         pnlLogo.Dock = DockStyle.Top;
         pnlLogo.Location = new Point(0, 0);
@@ -276,6 +280,16 @@
         pnlMainContent.Size = new Size(958, 564);
         pnlMainContent.TabIndex = 2;
         // 
+        // pbLogo
+        // 
+        pbLogo.Image = (Image)resources.GetObject("pbLogo.Image");
+        pbLogo.Location = new Point(11, 12);
+        pbLogo.Name = "pbLogo";
+        pbLogo.Size = new Size(49, 48);
+        pbLogo.SizeMode = PictureBoxSizeMode.Zoom;
+        pbLogo.TabIndex = 7;
+        pbLogo.TabStop = false;
+        // 
         // MainForm
         // 
         AutoScaleDimensions = new SizeF(10F, 25F);
@@ -294,6 +308,7 @@
         pnlLogo.PerformLayout();
         pnlSidebar.ResumeLayout(false);
         pnlSidebar.PerformLayout();
+        ((System.ComponentModel.ISupportInitialize)pbLogo).EndInit();
         ResumeLayout(false);
     }
 
@@ -319,5 +334,6 @@
     private Label lblMaintenance;
     private Panel pnlSidebar;
     private Panel pnlMainContent;
+    private PictureBox pbLogo;
 }
 
