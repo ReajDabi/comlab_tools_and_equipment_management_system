@@ -64,6 +64,10 @@ namespace ComLabManager.UI
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             HighlightActiveButton((Button)sender);
+            lblPageTitle.Text = "Dashboard";
+
+            DashboardView dashView = new DashboardView();
+            LoadView(dashView);
         }
 
         private void btnNavEquipment_Click(object sender, EventArgs e)
