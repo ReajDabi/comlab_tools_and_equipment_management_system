@@ -37,14 +37,30 @@
             panel2 = new Panel();
             label3 = new Label();
             label4 = new Label();
+            pnlAnalytics = new Panel();
+            pnlDecommissioned = new Panel();
+            pnlRepair = new Panel();
+            pnlActive = new Panel();
+            lblDeccomissioned = new Label();
+            lblUnderRepair = new Label();
+            lblActive = new Label();
+            lblChartTitle = new Label();
+            panel3 = new Panel();
+            dgvRecentTickets = new DataGridView();
+            Ticket = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
+            label1 = new Label();
             pnlCardEquipment.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            pnlAnalytics.SuspendLayout();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvRecentTickets).BeginInit();
             SuspendLayout();
             // 
             // pnlCardEquipment
             // 
-            pnlCardEquipment.BackColor = Color.White;
+            pnlCardEquipment.BackColor = Color.WhiteSmoke;
             pnlCardEquipment.Controls.Add(lblTEC);
             pnlCardEquipment.Controls.Add(lblTEquipment);
             pnlCardEquipment.Location = new Point(35, 29);
@@ -76,7 +92,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.White;
+            panel1.BackColor = Color.WhiteSmoke;
             panel1.Controls.Add(lblIURC);
             panel1.Controls.Add(lblIUR);
             panel1.Location = new Point(335, 29);
@@ -108,7 +124,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.White;
+            panel2.BackColor = Color.WhiteSmoke;
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label4);
             panel2.Location = new Point(635, 29);
@@ -138,11 +154,142 @@
             label4.TabIndex = 0;
             label4.Text = "Low Spare Parts";
             // 
+            // pnlAnalytics
+            // 
+            pnlAnalytics.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pnlAnalytics.BackColor = Color.WhiteSmoke;
+            pnlAnalytics.Controls.Add(pnlDecommissioned);
+            pnlAnalytics.Controls.Add(pnlRepair);
+            pnlAnalytics.Controls.Add(pnlActive);
+            pnlAnalytics.Controls.Add(lblDeccomissioned);
+            pnlAnalytics.Controls.Add(lblUnderRepair);
+            pnlAnalytics.Controls.Add(lblActive);
+            pnlAnalytics.Controls.Add(lblChartTitle);
+            pnlAnalytics.Location = new Point(35, 179);
+            pnlAnalytics.Name = "pnlAnalytics";
+            pnlAnalytics.Size = new Size(550, 360);
+            pnlAnalytics.TabIndex = 2;
+            // 
+            // pnlDecommissioned
+            // 
+            pnlDecommissioned.BackColor = Color.FromArgb(148, 163, 184);
+            pnlDecommissioned.Location = new Point(170, 271);
+            pnlDecommissioned.Name = "pnlDecommissioned";
+            pnlDecommissioned.Size = new Size(119, 25);
+            pnlDecommissioned.TabIndex = 3;
+            // 
+            // pnlRepair
+            // 
+            pnlRepair.BackColor = Color.FromArgb(229, 57, 69);
+            pnlRepair.Location = new Point(170, 185);
+            pnlRepair.Name = "pnlRepair";
+            pnlRepair.Size = new Size(69, 25);
+            pnlRepair.TabIndex = 3;
+            // 
+            // pnlActive
+            // 
+            pnlActive.BackColor = Color.FromArgb(25, 135, 84);
+            pnlActive.Location = new Point(170, 109);
+            pnlActive.Name = "pnlActive";
+            pnlActive.Size = new Size(344, 25);
+            pnlActive.TabIndex = 2;
+            // 
+            // lblDeccomissioned
+            // 
+            lblDeccomissioned.AutoSize = true;
+            lblDeccomissioned.Location = new Point(14, 271);
+            lblDeccomissioned.Name = "lblDeccomissioned";
+            lblDeccomissioned.Size = new Size(150, 25);
+            lblDeccomissioned.TabIndex = 1;
+            lblDeccomissioned.Text = "Decommissioned";
+            // 
+            // lblUnderRepair
+            // 
+            lblUnderRepair.AutoSize = true;
+            lblUnderRepair.Location = new Point(14, 185);
+            lblUnderRepair.Name = "lblUnderRepair";
+            lblUnderRepair.Size = new Size(114, 25);
+            lblUnderRepair.TabIndex = 1;
+            lblUnderRepair.Text = "Under Repair";
+            // 
+            // lblActive
+            // 
+            lblActive.AutoSize = true;
+            lblActive.Location = new Point(14, 109);
+            lblActive.Name = "lblActive";
+            lblActive.Size = new Size(60, 25);
+            lblActive.TabIndex = 1;
+            lblActive.Text = "Active";
+            // 
+            // lblChartTitle
+            // 
+            lblChartTitle.AutoSize = true;
+            lblChartTitle.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblChartTitle.ForeColor = Color.FromArgb(30, 41, 59);
+            lblChartTitle.Location = new Point(14, 24);
+            lblChartTitle.Name = "lblChartTitle";
+            lblChartTitle.Size = new Size(328, 32);
+            lblChartTitle.TabIndex = 0;
+            lblChartTitle.Text = "Equipment Status Overview";
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.White;
+            panel3.Controls.Add(dgvRecentTickets);
+            panel3.Location = new Point(607, 226);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(308, 313);
+            panel3.TabIndex = 3;
+            // 
+            // dgvRecentTickets
+            // 
+            dgvRecentTickets.BackgroundColor = Color.White;
+            dgvRecentTickets.BorderStyle = BorderStyle.None;
+            dgvRecentTickets.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvRecentTickets.Columns.AddRange(new DataGridViewColumn[] { Ticket, Status });
+            dgvRecentTickets.Dock = DockStyle.Fill;
+            dgvRecentTickets.Location = new Point(0, 0);
+            dgvRecentTickets.Name = "dgvRecentTickets";
+            dgvRecentTickets.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvRecentTickets.RowHeadersVisible = false;
+            dgvRecentTickets.RowHeadersWidth = 62;
+            dgvRecentTickets.Size = new Size(308, 313);
+            dgvRecentTickets.TabIndex = 1;
+            // 
+            // Ticket
+            // 
+            Ticket.HeaderText = "Ticket/Issue";
+            Ticket.MinimumWidth = 8;
+            Ticket.Name = "Ticket";
+            Ticket.Width = 150;
+            // 
+            // Status
+            // 
+            Status.HeaderText = "Status";
+            Status.MinimumWidth = 8;
+            Status.Name = "Status";
+            Status.Width = 155;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(30, 41, 59);
+            label1.Location = new Point(635, 179);
+            label1.Name = "label1";
+            label1.Size = new Size(246, 32);
+            label1.TabIndex = 0;
+            label1.Text = "Recent Maintenance";
+            // 
             // DashboardView
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(248, 249, 250);
+            BackColor = Color.White;
+            Controls.Add(panel3);
+            Controls.Add(label1);
+            Controls.Add(pnlAnalytics);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(pnlCardEquipment);
@@ -154,7 +301,12 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            pnlAnalytics.ResumeLayout(false);
+            pnlAnalytics.PerformLayout();
+            panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvRecentTickets).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -168,5 +320,19 @@
         private Panel panel2;
         private Label label3;
         private Label label4;
+        private Panel pnlAnalytics;
+        private Label lblChartTitle;
+        private Label lblDeccomissioned;
+        private Label lblUnderRepair;
+        private Label lblActive;
+        private Panel panel3;
+        private DataGridView dgvRecentTickets;
+        private Label label1;
+        private DataGridViewTextBoxColumn Ticket;
+        private DataGridViewTextBoxColumn Status;
+        private Panel pnlDecommissioned;
+        private Panel pnlRepair;
+        private Panel panel4;
+        private Panel pnlActive;
     }
 }
