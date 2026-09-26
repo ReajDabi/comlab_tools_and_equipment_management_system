@@ -74,7 +74,7 @@
             // txtName
             // 
             txtName.BorderStyle = BorderStyle.FixedSingle;
-            txtName.Location = new Point(67, 95);
+            txtName.Location = new Point(81, 102);
             txtName.Name = "txtName";
             txtName.Size = new Size(274, 31);
             txtName.TabIndex = 2;
@@ -84,7 +84,7 @@
             cmbCategory.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbCategory.FormattingEnabled = true;
             cmbCategory.Items.AddRange(new object[] { "System Unit", "Monitor", "Peripheral", "Networking" });
-            cmbCategory.Location = new Point(67, 219);
+            cmbCategory.Location = new Point(81, 229);
             cmbCategory.Name = "cmbCategory";
             cmbCategory.Size = new Size(273, 33);
             cmbCategory.TabIndex = 3;
@@ -92,7 +92,7 @@
             // lblName
             // 
             lblName.AutoSize = true;
-            lblName.Location = new Point(59, 64);
+            lblName.Location = new Point(73, 71);
             lblName.Name = "lblName";
             lblName.Size = new Size(150, 25);
             lblName.TabIndex = 4;
@@ -101,7 +101,7 @@
             // txtSerialNumber
             // 
             txtSerialNumber.BorderStyle = BorderStyle.FixedSingle;
-            txtSerialNumber.Location = new Point(67, 157);
+            txtSerialNumber.Location = new Point(81, 166);
             txtSerialNumber.Name = "txtSerialNumber";
             txtSerialNumber.Size = new Size(274, 31);
             txtSerialNumber.TabIndex = 2;
@@ -109,7 +109,7 @@
             // lblSerialNumber
             // 
             lblSerialNumber.AutoSize = true;
-            lblSerialNumber.Location = new Point(59, 128);
+            lblSerialNumber.Location = new Point(73, 137);
             lblSerialNumber.Name = "lblSerialNumber";
             lblSerialNumber.Size = new Size(124, 25);
             lblSerialNumber.TabIndex = 4;
@@ -118,7 +118,7 @@
             // lblCategory
             // 
             lblCategory.AutoSize = true;
-            lblCategory.Location = new Point(59, 191);
+            lblCategory.Location = new Point(73, 201);
             lblCategory.Name = "lblCategory";
             lblCategory.Size = new Size(84, 25);
             lblCategory.TabIndex = 4;
@@ -129,7 +129,7 @@
             cmbStatus.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbStatus.FormattingEnabled = true;
             cmbStatus.Items.AddRange(new object[] { "Active", "Under Repair", "Decommissioned" });
-            cmbStatus.Location = new Point(68, 281);
+            cmbStatus.Location = new Point(82, 290);
             cmbStatus.Name = "cmbStatus";
             cmbStatus.Size = new Size(273, 33);
             cmbStatus.TabIndex = 3;
@@ -137,7 +137,7 @@
             // lblStatus
             // 
             lblStatus.AutoSize = true;
-            lblStatus.Location = new Point(61, 253);
+            lblStatus.Location = new Point(75, 262);
             lblStatus.Name = "lblStatus";
             lblStatus.Size = new Size(60, 25);
             lblStatus.TabIndex = 4;
@@ -146,7 +146,7 @@
             // txtLocation
             // 
             txtLocation.BorderStyle = BorderStyle.FixedSingle;
-            txtLocation.Location = new Point(69, 349);
+            txtLocation.Location = new Point(83, 359);
             txtLocation.Name = "txtLocation";
             txtLocation.Size = new Size(270, 31);
             txtLocation.TabIndex = 2;
@@ -154,7 +154,7 @@
             // lblLocation
             // 
             lblLocation.AutoSize = true;
-            lblLocation.Location = new Point(60, 317);
+            lblLocation.Location = new Point(74, 327);
             lblLocation.Name = "lblLocation";
             lblLocation.Size = new Size(79, 25);
             lblLocation.TabIndex = 4;
@@ -163,7 +163,7 @@
             // dtpDateAcquired
             // 
             dtpDateAcquired.Format = DateTimePickerFormat.Short;
-            dtpDateAcquired.Location = new Point(67, 417);
+            dtpDateAcquired.Location = new Point(81, 427);
             dtpDateAcquired.Name = "dtpDateAcquired";
             dtpDateAcquired.Size = new Size(272, 31);
             dtpDateAcquired.TabIndex = 5;
@@ -171,7 +171,7 @@
             // lblDateAcquired
             // 
             lblDateAcquired.AutoSize = true;
-            lblDateAcquired.Location = new Point(58, 387);
+            lblDateAcquired.Location = new Point(72, 397);
             lblDateAcquired.Name = "lblDateAcquired";
             lblDateAcquired.Size = new Size(125, 25);
             lblDateAcquired.TabIndex = 4;
@@ -183,7 +183,7 @@
             btnCancel.DialogResult = DialogResult.Cancel;
             btnCancel.FlatAppearance.BorderSize = 0;
             btnCancel.FlatStyle = FlatStyle.Flat;
-            btnCancel.Location = new Point(71, 14);
+            btnCancel.Location = new Point(80, 14);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(112, 34);
             btnCancel.TabIndex = 6;
@@ -197,7 +197,7 @@
             btnSave.FlatAppearance.BorderSize = 0;
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(229, 14);
+            btnSave.Location = new Point(241, 14);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(112, 34);
             btnSave.TabIndex = 6;
