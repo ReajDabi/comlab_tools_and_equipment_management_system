@@ -38,17 +38,17 @@
         btnNavScheduler = new Button();
         btnSignOut = new Button();
         pnlLogo = new Panel();
+        pbLogo = new PictureBox();
         label1 = new Label();
         lblMonitor = new Label();
         lblAssets = new Label();
         lblMaintenance = new Label();
         pnlSidebar = new Panel();
         pnlMainContent = new Panel();
-        pbLogo = new PictureBox();
         pnlHeader.SuspendLayout();
         pnlLogo.SuspendLayout();
-        pnlSidebar.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
+        pnlSidebar.SuspendLayout();
         SuspendLayout();
         // 
         // pnlHeader
@@ -203,6 +203,16 @@
         pnlLogo.Size = new Size(220, 70);
         pnlLogo.TabIndex = 5;
         // 
+        // pbLogo
+        // 
+        pbLogo.Image = (Image)resources.GetObject("pbLogo.Image");
+        pbLogo.Location = new Point(11, 12);
+        pbLogo.Name = "pbLogo";
+        pbLogo.Size = new Size(49, 48);
+        pbLogo.SizeMode = PictureBoxSizeMode.Zoom;
+        pbLogo.TabIndex = 7;
+        pbLogo.TabStop = false;
+        // 
         // label1
         // 
         label1.AutoSize = true;
@@ -280,16 +290,6 @@
         pnlMainContent.Size = new Size(958, 564);
         pnlMainContent.TabIndex = 2;
         // 
-        // pbLogo
-        // 
-        pbLogo.Image = (Image)resources.GetObject("pbLogo.Image");
-        pbLogo.Location = new Point(11, 12);
-        pbLogo.Name = "pbLogo";
-        pbLogo.Size = new Size(49, 48);
-        pbLogo.SizeMode = PictureBoxSizeMode.Zoom;
-        pbLogo.TabIndex = 7;
-        pbLogo.TabStop = false;
-        // 
         // MainForm
         // 
         AutoScaleDimensions = new SizeF(10F, 25F);
@@ -306,9 +306,9 @@
         pnlHeader.PerformLayout();
         pnlLogo.ResumeLayout(false);
         pnlLogo.PerformLayout();
+        ((System.ComponentModel.ISupportInitialize)pbLogo).EndInit();
         pnlSidebar.ResumeLayout(false);
         pnlSidebar.PerformLayout();
-        ((System.ComponentModel.ISupportInitialize)pbLogo).EndInit();
         ResumeLayout(false);
     }
 

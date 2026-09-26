@@ -28,121 +28,109 @@
         /// </summary>
         private void InitializeComponent()
         {
+            button1 = new Button();
             dataGridView1 = new DataGridView();
             ticket = new DataGridViewTextBoxColumn();
             equipment = new DataGridViewTextBoxColumn();
-            stauts = new DataGridViewTextBoxColumn();
-            reported = new DataGridViewTextBoxColumn();
+            issue = new DataGridViewTextBoxColumn();
+            status = new DataGridViewTextBoxColumn();
             cost = new DataGridViewTextBoxColumn();
-            groupBox1 = new GroupBox();
-            textBox1 = new TextBox();
-            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            groupBox1.SuspendLayout();
             SuspendLayout();
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button1.BackColor = Color.Navy;
+            button1.Cursor = Cursors.NoMove2D;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = SystemColors.ControlLight;
+            button1.Location = new Point(860, 560);
+            button1.Name = "button1";
+            button1.Size = new Size(193, 62);
+            button1.TabIndex = 0;
+            button1.Text = "Create Ticket";
+            button1.UseVisualStyleBackColor = false;
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = Color.FromArgb(248, 249, 250);
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ticket, equipment, stauts, reported, cost });
-            dataGridView1.GridColor = SystemColors.ActiveCaptionText;
-            dataGridView1.Location = new Point(0, 0);
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ticket, equipment, issue, status, cost });
+            dataGridView1.Location = new Point(-3, 1);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(675, 564);
-            dataGridView1.TabIndex = 0;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(1076, 646);
+            dataGridView1.TabIndex = 1;
             // 
             // ticket
             // 
             ticket.HeaderText = "Ticket";
             ticket.MinimumWidth = 6;
             ticket.Name = "ticket";
-            ticket.Width = 125;
+            ticket.ReadOnly = true;
             // 
             // equipment
             // 
             equipment.HeaderText = "Equipment";
             equipment.MinimumWidth = 6;
             equipment.Name = "equipment";
-            equipment.Width = 125;
+            equipment.ReadOnly = true;
             // 
-            // stauts
+            // issue
             // 
-            stauts.HeaderText = "Status";
-            stauts.MinimumWidth = 6;
-            stauts.Name = "stauts";
-            stauts.Width = 125;
+            issue.HeaderText = "Issue";
+            issue.MinimumWidth = 6;
+            issue.Name = "issue";
+            issue.ReadOnly = true;
             // 
-            // reported
+            // status
             // 
-            reported.HeaderText = "Reported";
-            reported.MinimumWidth = 6;
-            reported.Name = "reported";
-            reported.Width = 125;
+            status.HeaderText = "Status";
+            status.MinimumWidth = 6;
+            status.Name = "status";
+            status.ReadOnly = true;
             // 
             // cost
             // 
             cost.HeaderText = "Cost";
             cost.MinimumWidth = 6;
             cost.Name = "cost";
-            cost.Width = 125;
-            // 
-            // groupBox1
-            // 
-            groupBox1.BackColor = Color.FromArgb(30, 41, 59);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(label1);
-            groupBox1.ForeColor = SystemColors.ButtonFace;
-            groupBox1.Location = new Point(681, 3);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(274, 300);
-            groupBox1.TabIndex = 1;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "New Repair Ticket";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(6, 65);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(262, 27);
-            textBox1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9.75F);
-            label1.Location = new Point(6, 39);
-            label1.Name = "label1";
-            label1.Size = new Size(93, 23);
-            label1.TabIndex = 0;
-            label1.Text = "Equipment";
+            cost.ReadOnly = true;
             // 
             // MaintenanceView
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(248, 249, 250);
-            Controls.Add(groupBox1);
+            BorderStyle = BorderStyle.FixedSingle;
+            Controls.Add(button1);
             Controls.Add(dataGridView1);
+            Cursor = Cursors.Hand;
+            Font = new Font("Segoe UI", 10F);
             Name = "MaintenanceView";
-            Size = new Size(958, 564);
+            Size = new Size(1076, 646);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
+        private Button button1;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn ticket;
         private DataGridViewTextBoxColumn equipment;
-        private DataGridViewTextBoxColumn stauts;
-        private DataGridViewTextBoxColumn reported;
+        private DataGridViewTextBoxColumn issue;
+        private DataGridViewTextBoxColumn status;
         private DataGridViewTextBoxColumn cost;
-        private GroupBox groupBox1;
-        private Label label1;
-        private TextBox textBox1;
     }
 }

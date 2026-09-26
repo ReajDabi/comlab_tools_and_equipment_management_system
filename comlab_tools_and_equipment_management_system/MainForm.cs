@@ -44,10 +44,22 @@ namespace ComLabManager.UI
             _activeButton = clickedButton;
         }
 
+        private void LoadView(UserControl view)
+        {
+           
+            pnlMainContent.Controls.Clear();
+
+           
+            view.Dock = DockStyle.Fill;
+
         
+            pnlMainContent.Controls.Add(view);
+        }
 
 
 
+
+        //Click Events
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
@@ -58,12 +70,18 @@ namespace ComLabManager.UI
         {
             HighlightActiveButton((Button)sender);
             lblPageTitle.Text = "Equipment Inventory";
+
+            EquipmentView equipView = new EquipmentView();
+            LoadView(equipView);
         }
 
         private void btnNavTickets_Click(object sender, EventArgs e)
         {
             HighlightActiveButton((Button)sender);
             lblPageTitle.Text = "Maintenance Tickets";
+
+            MaintenanceView maintenanceView = new MaintenanceView();
+            LoadView(maintenanceView);
         }
 
         private void btnNavSpareParts_Click(object sender, EventArgs e)
