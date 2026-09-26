@@ -88,6 +88,9 @@ namespace ComLabManager.UI
         {
             HighlightActiveButton((Button)sender);
             lblPageTitle.Text = "Spare Parts";
+
+            SparePartsView sparepartview = new SparePartsView();
+            LoadView(sparepartview);
         }
 
         private void btnNavScheduler_Click(object sender, EventArgs e)
