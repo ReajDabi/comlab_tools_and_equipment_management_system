@@ -14,5 +14,11 @@ namespace ComLabManager.UI
         {
             InitializeComponent();
         }
+
+        private void buttonCreateTicket_Click(object sender, EventArgs e)
+        {
+            CreateTicketForm ticketForm = new CreateTicketForm();
+            ticketForm.ShowDialog();
+        }
     }
 }
